@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in - Influmerchandise </title>
+</head>
+<body>
+    <h1>Login Here</h1>
+    <form method='POST' action="{% url 'login' %}" novalidat>
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{field.label_tag}} {{field}}
+            </p>
+        {% endfor %}
+        <input type="submit" value="Login" />
+        <p>Don't have an account? <a href="{%url 'register' %}">Register</a></p>
+    </form>
+</body>
+</html>
